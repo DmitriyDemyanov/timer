@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    padding: 24px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.main {
+    display: flex;
+    padding: 0 0 48px 0;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+.timers-container {
+    width: 45%;
+}
+
+.timers-container__list {
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+}
+
+.timer {
+    margin-top: 24px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.timer:not(.active) [data-action=stop]{
+    display: none;
+}
+
+.timer.active [data-action=start]{
+    display: none;
+}
+
+.time {
+    min-width: 90px;
+    display: inline-block;
+    text-align: center;
+}
+
+.timeout {
+    margin-top: 24px;
+    font-size: 20px;
+}
+
+.timeout[data-state=in-progress] [data-role=state] {
+    font-weight: bold;
+    color: #800020;
+}
+
+.timeout[data-state=done] [data-role=state] {
+    font-weight: bold;
+    color: #228c22;
+}
+
+.timeout[data-state=in-progress] .btn {
+    display: none;
+}
+
+.timeout__info {
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+}
+
+.timeout__text,
+.timeout__value {
+    display: inline-block;
+}
+.timeout__text {
+    width: 90px;
+    font-size: 16px;
+}
+
+.control-buttons {
+    display: flex;
+}
+
+.btn {
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-small {
+    margin: 0 6px;
+}
+
+.btn-normal {
+    min-width: 64px;
+    min-height: 32px;
+    font-size: 16px;
+}
+
+.btn-big {
+    min-width: 96px;
+    min-height: 48px;
+    font-size: 24px;
+}
+
+.btn-image {
+    width: auto;
+    height: 20px;
+}
+
+.seconds-input {
+    max-width: 50%;
+}
+
